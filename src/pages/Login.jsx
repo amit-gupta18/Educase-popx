@@ -49,7 +49,7 @@ const Login = () => {
                     onChange={e => setUsername(e.target.value)}
                     required
                 />
-                <label className='font-sans font-semibold relative top-3 left-2 bg-white text-indigo-700 block mb-1' htmlFor="password">
+                <label className='font-sans font-semibold relative top-3 left-2 bg-white w-fit text-indigo-700 block mb-1' htmlFor="password">
                     Password
                 </label>
                 <input

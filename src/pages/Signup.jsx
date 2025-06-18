@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Signup = () => {
     const [formdata, setFormdata] = useState({
@@ -12,16 +12,23 @@ const Signup = () => {
 
     const handleChange = (e) => {
         const { name, value, type } = e.target;
-        setForm(prev => ({
+        setFormdata(prev => ({
             ...prev,
             [name]: type === 'radio' ? value : value
         }));
     };
-
     const handleSubmit = (e) => {
-        e.preventDefault();
-        alert('Form submitted!');
-    };
+        if (e) e.preventDefault(); // Prevent default form submission if event is passed
+        setFormdata({
+            fullName: '',
+            phone: '',
+            email: '',
+            password: '',
+            company: '',
+            agency: ''
+        }); // Reset form data
+        
+    }
 
     return (
         <div className="px-4 py-4 text-black">
@@ -108,7 +115,7 @@ const Signup = () => {
                         </div>
                     </div>
                     <div>
-                        <button type="submit" className="bg-[#7649d5] mt-4 text-white py-2 px-4 w-full rounded-lg hover:bg-[#5e38b0] transition">
+                        <button type="submit"  className="bg-[#7649d5] cursor-pointer not-open:mt-4 text-white py-2 px-4 w-full rounded-lg hover:bg-[#5e38b0] transition">
                             Sign Up
                         </button>
                     </div>

@@ -14,7 +14,7 @@ const Profile = () => {
         <div className="flex items-start space-x-3">
           <div className="relative">
             <img
-              src='./popx.png'
+              src='./popx.svg'
               alt="Profile picture"
               className="w-18 h-18 rounded-full object-cover"
             />
